@@ -5,13 +5,12 @@ import requests
 from flask import Flask
 from flask import request
 from flask import make_response
-
 # Flask app should start in global layout
 app = Flask(__name__)
 
 
-@app.route('/webhook', methods=['POST'])
-def webhook():
+@app.route('/Webhook', methods=['POST'])
+def Webhook():
     req = request.get_json(silent=True, force=True)
     print(json.dumps(req, indent=4))
     res = processRequest(req)
@@ -36,7 +35,7 @@ def makeResponse(req):
     # r = requests.get(url, headers=headers)
     # json_object = r.json()
     # ShareUrl = json_object['ShareUrl']
-    speech = "The Order status can be obtained by clicking the below URL :: " + ShareUrl
+    speech = "The Order status can be obtained by clicking the below URL :: " #+ ShareUrl
     return {
         "speech": speech,
         "displayText": speech,
