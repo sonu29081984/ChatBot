@@ -28,9 +28,8 @@ def makeResponse(req):
     Brand = parameters.get("Brand")
     OrderNumber = parameters.get("OrderNumber")
     url = 'https://cloud.10-4.com/atlas/frexapi/shipment/' + OrderNumber
-    Pass='Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJlYjI1NTA4Zi1mNTQwLTRjNDItYjQwNi0zNzMyMDVhZThmOTkiLCJodHRwOi8vMTAtNC5jb20vY2xhaW1zL3VzZXJJZCI6IjIzNTEiLCJpc3MiOiJodHRwczovL2Nsb3VkLjEwLTQuY29tIiwiYXVkIjoiaHR0cHM6Ly9jbG91ZC4xMC00LmNvbSIsImV4cCI6MjE0NzM5NTgxMCwibmJmIjoxNTE2MjQzODEwfQ.YtnGLxWij4sZ-NhAiEVLXgbUXrKZmsKb1uZn_ISH5GU'
     headers = {
-        'Authorization': Pass}
+        'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJlYjI1NTA4Zi1mNTQwLTRjNDItYjQwNi0zNzMyMDVhZThmOTkiLCJodHRwOi8vMTAtNC5jb20vY2xhaW1zL3VzZXJJZCI6IjIzNTEiLCJpc3MiOiJodHRwczovL2Nsb3VkLjEwLTQuY29tIiwiYXVkIjoiaHR0cHM6Ly9jbG91ZC4xMC00LmNvbSIsImV4cCI6MjE0NzM5NTgxMCwibmJmIjoxNTE2MjQzODEwfQ.YtnGLxWij4sZ-NhAiEVLXgbUXrKZmsKb1uZn_ISH5GU'}
     if OrderNumber is None:
         return None
     r = requests.get(url, headers=headers)
