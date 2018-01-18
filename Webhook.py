@@ -35,7 +35,13 @@ def makeResponse(req):
     r = requests.get(url, headers=headers)
     json_object = r.json()
     ShareUrl = json_object['ShareUrl']
-    speech = "The Order status can be obtained by clicking the below URL :: " + ShareUrl
+    LastPositionEvent = json_object['LastPositionEvent']
+    DeliveryStatusDescription=json_object['DeliveryStatusDescription']
+    City=LastPositionEvent['City']
+    State = LastPositionEvent['State']
+
+    speech = "The devlivery for Order:" + OrderNumber + " is " + DeliveryStatusDescription + ". The shipment has reached city:" + City + " and state:" +State
+    ". More Details can be obtained by clicking the below URL :: " + ShareUrl
     return {
         "speech": speech,
         "displayText": speech,
