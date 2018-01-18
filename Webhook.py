@@ -40,7 +40,7 @@ def makeResponse(req):
     City=LastPositionEvent['City']
     State = LastPositionEvent['State']
 
-    speech = "The delivery for Order:" + OrderNumber + " is " + DeliveryStatusDescription + ". The shipment has reached city:" + City + " and state:" +State + ". More Details can be obtained by clicking the below URL :: " + ShareUrl
+    speech = "The delivery for Order ::" + OrderNumber + " is " + DeliveryStatusDescription + ". The shipment has reached city :: " + City + " and state :: " +State + ". More Details can be obtained by clicking the below URL :: " + ShareUrl
     return {
         "speech": speech,
         "displayText": speech,
