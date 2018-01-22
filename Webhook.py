@@ -27,6 +27,7 @@ def makeResponse(req):
     parameters = result.get("parameters")
     Brand = parameters.get("Brand")
     OrderNumber = parameters.get("OrderNumber")
+    OrderNumber = ''.join(OrderNumber.split())
     url = 'https://cloud.10-4.com/atlas/frexapi/shipment/' + OrderNumber
     headers = {
         'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJlYjI1NTA4Zi1mNTQwLTRjNDItYjQwNi0zNzMyMDVhZThmOTkiLCJodHRwOi8vMTAtNC5jb20vY2xhaW1zL3VzZXJJZCI6IjIzNTEiLCJpc3MiOiJodHRwczovL2Nsb3VkLjEwLTQuY29tIiwiYXVkIjoiaHR0cHM6Ly9jbG91ZC4xMC00LmNvbSIsImV4cCI6MjE0NzM5NTgxMCwibmJmIjoxNTE2MjQzODEwfQ.YtnGLxWij4sZ-NhAiEVLXgbUXrKZmsKb1uZn_ISH5GU'}
